@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, Provider as PaperProvider, TextInput } from 'react-native-paper'
+import { ScrollView, TouchableOpacity, View } from 'react-native';
+import TodoItem from './components/TodoItem';
 
 export default function App() {
+  const [todos, setTodos] = useState([])
+  const [todoItem, setTodoItem] = useState('')
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <ScrollView>
+      <TodoItem />
+      </ScrollView>
+      <View style={{
+        padding: 20,
+        margin: 5
+      }}>
+        <TextInput
+          label="New Todo"
+        />
+        <Button icon='plus' mode="contained" style={{ marginTop: 10}}>Add New Todo</Button>
+        <Button icon='minus' buttonColor='red' mode="contained" style={{ marginTop: 10}}>Add New Todo</Button>
+      </View>
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

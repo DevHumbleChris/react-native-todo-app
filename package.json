@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "todo-app-rn",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -27,5 +27,21 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "description": "React Native Todo App",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevHumbleChris/react-native-todo-app.git"
+  },
+  "keywords": [
+    "todo-app",
+    "react-native",
+    "react"
+  ],
+  "author": "AmChrisKE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevHumbleChris/react-native-todo-app/issues"
+  },
+  "homepage": "https://github.com/DevHumbleChris/react-native-todo-app#readme"
 }

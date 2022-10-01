@@ -2,18 +2,23 @@ import { View, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { Checkbox } from "react-native-paper";
 
-const TodoItem = ({ id, todoItem }) => {
+const TodoItem = ({ id, todoItem, updateCheckTodo }) => {
+  const checkTodo = (checkedVal) => {
+    setIsChecked(!checkedVal)
+    // updateCheckTodo(id, todoItem, checkedVal)
+  }
   const [isChecked, setIsChecked] = useState(false);
   return (
     <View style={styles.todo}>
       <Checkbox
         status={isChecked ? "checked" : "unchecked"}
-        onPress={() => setIsChecked(!isChecked)}
+        onPress={() => checkTodo(isChecked)}
       />
       <Text
         style={[
           styles.todoText,
           { textDecorationLine: isChecked ? "line-through" : "none" },
+          { opacity: isChecked ? 0.5 : 1 }
         ]}
       >
         {" "}
